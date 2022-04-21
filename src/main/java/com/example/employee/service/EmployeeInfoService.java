@@ -57,7 +57,7 @@ public class EmployeeInfoService {
     public Mono<Employee> deleteEmployee(final String id) {
         return this.dbServiceClient
                 .build()
-                .put()
+                .delete()
                 .uri("http://localhost:9090/dbService/api/v6/delete/{id}")
                 .retrieve()
                 .bodyToMono(Employee.class)
